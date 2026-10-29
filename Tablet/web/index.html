@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Handling Lab</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><div><small>NO HESI / PASSENGER TOOLS</small><h1>Handling Lab</h1></div><div id="connection" role="status">Connecting…</div><button id="refresh">Reconnect</button></header>
+<section id="pairing" hidden><h2>Pair with your PC</h2><p>Enter the six-digit code shown by the Tablet Lab launcher.</p><form id="pairForm"><input id="pin" aria-label="Pairing code" inputmode="numeric" maxlength="6" placeholder="000000" autocomplete="off"><button>Pair tablet</button></form></section>
+<section id="waiting"><h2>Waiting for a driving session</h2><p>On the PC, open No Hesi Launcher, refresh the library, and choose a <b>Tablet Lab</b> version: Supra, Heat Skyline or Heat Favourite.</p><p>Keep the USB cable connected. This app will load that car’s controls when you tap Reconnect.</p></section>
+<main id="lab" hidden>
+<section class="telemetry"><div><small>ACTIVE MODEL</small><strong id="model">Waiting for game</strong></div><div><small>SPEED</small><strong><span id="speed">0</span> <em>km/h</em></strong></div><div><small>ENGINE</small><strong><span id="rpm">—</span> <em>rpm</em></strong></div><div><small>APPLIED REVISION</small><strong id="revision">0</strong></div></section>
+<section class="actions"><button id="undo">Undo</button><button id="defaults">Session baseline</button><button id="save">Save new preset</button><select id="presets" aria-label="Saved presets"><option value="">Choose preset…</option></select><button id="load">Load preset</button><label><input id="auto" type="checkbox" checked> Apply on release</label></section>
+<p id="message" role="status">Changes apply to this standalone vehicle. Hardware force activation stays with the driver.</p>
+<div class="workspace"><aside><input id="search" type="search" placeholder="Search all parameters…" aria-label="Search parameters"><label class="advanced"><input id="stopped" type="checkbox"> Allow stopped changes</label><p class="hint">Chassis and geometry need speed below 0.5 km/h. Live controls apply at the next physics handoff.</p><nav id="groups" aria-label="Parameter groups"></nav></aside>
+<section class="editor"><div class="sectionTitle"><h2 id="groupTitle">Parameters</h2><span id="count"></span></div><div id="parameters"></div></section></div>
+<footer><div><b id="pending">No unapplied changes</b><span id="help">Original car data and saved experiments stay intact.</span></div><button id="discard">Discard edits</button><button id="apply" class="primary">Apply changes</button></footer>
+</main>
+<dialog id="saveDialog"><form id="saveForm"><h2>Save a new preset</h2><p>Creates a separate, model-specific copy. Existing presets are preserved.</p><input id="presetName" maxlength="80" required placeholder="e.g. Softer rear · test 2" aria-label="Preset name"><div class="dialogButtons"><button type="button" id="cancelSave">Cancel</button><button class="primary">Save copy</button></div></form></dialog>
+<script src="/app.js"></script></body></html>

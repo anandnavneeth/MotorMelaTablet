@@ -1,0 +1,22 @@
+# Build outputs, local state and dependencies
+Binaries/
+Saved/
+Intermediate/
+Builds/
+.gradle/
+.idea/
+.vscode/
+local.properties
+__pycache__/
+*.py[cod]
+*.apk
+*.aab
+*.class
+*.dex
+*.keystore
+*.jks
+*.log
+.env
+.env.*
+connection.json
+.p4config
